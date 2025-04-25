@@ -1,0 +1,67 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Oddatelier
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Playfair Display', serif;
+      background: black;
+      overflow-x: hidden;
+    }
+    #video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+  </style>
+ </head>
+ <body class="text-white min-h-screen flex flex-col justify-between relative">
+  <video autoplay muted loop playsinline id="video-bg" aria-label="Background video">
+   <source src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190705_01_Dusk_4k_001_preview.webm" type="video/webm"/>
+   <source src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190705_01_Dusk_4k_001_preview.mp4" type="video/mp4"/>
+   Your browser does not support the video tag.
+  </video>
+  <header class="flex items-center justify-between px-4 py-3 relative z-10">
+   <img alt="Oddatelier logo letter A in white on black background" class="w-10 h-10 object-contain" height="40" src="https://storage.googleapis.com/a1aa/image/47729275-e901-41df-efe8-57098dd85b70.jpg" width="40"/>
+   <nav>
+    <ul class="flex space-x-6 text-sm font-sans tracking-widest">
+     <li>
+      <a class="hover:underline" href="#contact-us">
+       Contact Us
+      </a>
+     </li>
+     <li>
+      <a class="hover:underline" href="#about-us">
+       About Us
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <main class="flex-grow relative z-10">
+   <!-- Text CHILDISH GAMBINO removed as requested -->
+  </main>
+  <footer class="text-center text-[9px] text-white px-4 pb-4 font-sans tracking-widest relative z-10">
+   <p>
+    © ODDATELIER. ALL RIGHTS RESERVED.
+   </p>
+   <p>
+    ALL OF ODDATELIER’S CONTENT IS COPYRIGHTED.
+   </p>
+  </footer>
+ </body>
+</html>
