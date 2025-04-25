@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Oddatelier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="text-black min-h-screen flex flex-col relative">
+  <video
+    id="background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+  >
+    <source
+      src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190705_01_Drone_4k_011_preview.webm"
+      type="video/webm"
+    />
+    <source
+      src="https://cdn.videvo.net/videvo_files/video/free/2019-07/small_watermarked/190705_01_Drone_4k_011_preview.mp4"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+
+  <header class="flex justify-between items-center p-4 relative z-10">
+    <img
+      alt="Oddatelier logo stylized OA letters in light gray on black background"
+      class="w-10 h-10 object-contain"
+      height="40"
+      src="https://storage.googleapis.com/a1aa/image/68c916d1-78df-46f2-0bc6-0ddabfea8d48.jpg"
+      width="40"
+    />
+    <button aria-label="Menu" class="text-black text-2xl leading-none">☰</button>
+  </header>
+
+  <main
+    class="flex-grow flex flex-col justify-center items-center px-6 text-center max-w-md mx-auto relative z-10"
+  >
+    <h1
+      id="title"
+      class="font-extrabold text-xl sm:text-2xl md:text-3xl tracking-wide mb-6"
+    >
+      ODDATELIER
+    </h1>
+    <p
+      id="description"
+      class="text-xs sm:text-sm md:text-base font-light tracking-widest leading-relaxed max-w-xs sm:max-w-sm md:max-w-md mb-12"
+    >
+      OA, WHICH STANDS FOR ODD ATELIER, IS A SPACE THAT AIMS TO CREATE NEW
+      THINGS THAT ATTRACT ATTENTION IN A DIFFERENT WAY FROM WHAT IS USUAL OR
+      EXPECTED. IT IS A LABEL FOUNDED BY ARTIST JENNIE IN NOVEMBER 2023.
+    </p>
+    <a
+      id="contact"
+      class="text-xs sm:text-sm md:text-base font-extrabold tracking-widest mb-20"
+      href="mailto:contact@oddatelier.net"
+      >CONTACT@ODDATELIER.NET</a
+    >
+    <nav class="flex space-x-6 text-xs sm:text-sm md:text-base font-semibold tracking-wide">
+      <button
+        id="btn-en"
+        class="font-extrabold"
+        aria-pressed="true"
+        type="button"
+      >
+        EN
+      </button>
+      <button
+        id="btn-kr"
+        class="opacity-70 font-normal"
+        aria-pressed="false"
+        type="button"
+      >
+        KR
+      </button>
+    </nav>
+  </main>
+
+  <footer
+    id="footer"
+    class="text-center text-[9px] sm:text-[10px] md:text-xs font-light tracking-widest px-4 pb-4 relative z-10"
+  >
+    <p>© ODDATELIER. ALL RIGHTS RESERVED.</p>
+    <p>ALL OF ODDATELIER’S CONTENT IS COPYRIGHTED.</p>
+  </footer>
+
+  <script>
+    const content = {
+      en: {
+        title: "ODDATELIER",
+        description:
+          "OA, WHICH STANDS FOR ODD ATELIER, IS A SPACE THAT AIMS TO CREATE NEW THINGS THAT ATTRACT ATTENTION IN A DIFFERENT WAY FROM WHAT IS USUAL OR EXPECTED. IT IS A LABEL FOUNDED BY ARTIST JENNIE IN NOVEMBER 2023.",
+        contact: "CONTACT@ODDATELIER.NET",
+        footer1: "© ODDATELIER. ALL RIGHTS RESERVED.",
+        footer2: "ALL OF ODDATELIER’S CONTENT IS COPYRIGHTED.",
+      },
+      kr: {
+        title: "오드아틀리에",
+        description:
+          "OA는 ODD ATELIER의 약자로, 일반적이거나 예상되는 것과는 다른 방식으로 주목을 끄는 새로운 것을 창조하는 공간입니다. 2023년 11월 아티스트 제니에 의해 설립된 레이블입니다.",
+        contact: "CONTACT@ODDATELIER.NET",
+        footer1: "© ODDATELIER. 모든 권리 보유.",
+        footer2: "ODDATELIER의 모든 콘텐츠는 저작권이 있습니다.",
+      },
+    };
+
+    const btnEn = document.getElementById("btn-en");
+    const btnKr = document.getElementById("btn-kr");
+    const title = document.getElementById("title");
+    const description = document.getElementById("description");
+    const contact = document.getElementById("contact");
+    const footer = document.getElementById("footer");
+
+    function setLanguage(lang) {
+      title.textContent = content[lang].title;
+      description.textContent = content[lang].description;
+      contact.textContent = content[lang].contact;
+      footer.children[0].textContent = content[lang].footer1;
+      footer.children[1].textContent = content[lang].footer2;
+
+      if (lang === "en") {
+        btnEn.classList.add("font-extrabold");
+        btnEn.classList.remove("opacity-70", "font-normal");
+        btnEn.setAttribute("aria-pressed", "true");
+
+        btnKr.classList.remove("font-extrabold");
+        btnKr.classList.add("opacity-70", "font-normal");
+        btnKr.setAttribute("aria-pressed", "false");
+      } else {
+        btnKr.classList.add("font-extrabold");
+        btnKr.classList.remove("opacity-70", "font-normal");
+        btnKr.setAttribute("aria-pressed", "true");
+
+        btnEn.classList.remove("font-extrabold");
+        btnEn.classList.add("opacity-70", "font-normal");
+        btnEn.setAttribute("aria-pressed", "false");
+      }
+    }
+
+    btnEn.addEventListener("click", () => setLanguage("en"));
+    btnKr.addEventListener("click", () => setLanguage("kr"));
+
+    // Default language
+    setLanguage("en");
+  </script>
+</body>
+      </html>
